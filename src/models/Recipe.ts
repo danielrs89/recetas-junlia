@@ -1,0 +1,4 @@
+export default interface Recipe {
+  id_recipe: number;
+  name_recipe: string;
+}

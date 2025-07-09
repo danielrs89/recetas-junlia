@@ -1,0 +1,14 @@
+import { FormsModule } from '@angular/forms';
+import { SearchComponent } from '../search/search.component';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-header',
+  imports: [FormsModule, RouterLink, SearchComponent],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css',
+})
+export class HeaderComponent {
+  constructor() {}
+}
