@@ -1,0 +1,43 @@
+<div class="container d-flex justify-content-center my-3">
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          [alt]="recipe.name_recipe"
+          [src]="'./assets/images/' + recipe.name_bd + '.jpg'"
+          class="d-block w-100 h-auto img-fluid"
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <div
+            class="p-3 rounded"
+            style="background-color: rgba(255, 255, 255, 0.85)"
+          >
+            <h1 class="display-6 text-center my-2 text-dark">
+              {{ recipe.name_recipe }}
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExample"
+      data-bs-slide="prev"
+      (click)="getRandomRecipeId()"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExample"
+      data-bs-slide="next"
+      (click)="getRandomRecipeId()"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>

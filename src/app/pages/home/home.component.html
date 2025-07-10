@@ -5,61 +5,21 @@ AQUI FALTA METER TITULO Y BUSCADOR GRANDE PARA HOME
 
 -->
 
-<h1>{{ title }}</h1>
+<div style="margin-top: 150px"></div>
+<!-- File: src/app/pages/home/home.component.html -->
+<h1 class=" display-1 text-center my-3">{{ title }}</h1>
 
-<div class="container d-flex justify-content-center my-3">
-  <div id="carouselExample" class="carousel slide">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img
-          alt="chuleta-cerdo"
-          src="./assets/images/chuleta-cerdo.jpg"
-          class="d-block w-100 h-auto"
-        />
-        <!-- <div class="carousel-caption d-none d-md-block">
-            <h5>Chuleta de cerdo</h5>
-            <p>Some representative placeholder content for the first slide.</p>
-          </div> -->
-      </div>
-      <div class="carousel-item">
-        <img
-          alt="salmon"
-          src="./assets/images/salmon.jpg"
-          class="d-block w-100 h-auto"
-        />
-      </div>
-      <div class="carousel-item">
-        <img
-          alt="pure-calabacin"
-          src="./assets/images/pure-calabacin.jpg"
-          class="d-block w-100 h-auto"
-        />
-      </div>
-      <div class="carousel-item">
-        <img
-          alt="manzana"
-          src="./assets/images/manzana.jpg"
-          class="d-block w-100 h-auto"
-        />
-      </div>
-    </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carouselExample"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carouselExample"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
+<p class="text-center w-75 mx-auto lead mb-5 text-muted ">
+  ¡Bienvenida a mi recetario! <br> Aquí encontrarás una variedad de recetas
+  deliciosas y fáciles de preparar. Desde platos principales hasta postres, hay
+  algo para todos los gustos. Explora las categorías y descubre nuevas ideas
+  para tus comidas diarias. <br><br> ¡Espero que disfrutes cocinando. ¡Buen provecho!
+</p>
+<h1 class="display-4 text-center my-3">Descubre recetas</h1>
+
+<app-carousel />
+<h1 class="display-4 text-center my-3">Categorías</h1>
+<app-carousel />
+<app-carousel />
+<app-carousel />
+<app-carousel />

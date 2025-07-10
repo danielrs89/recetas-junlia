@@ -29,10 +29,6 @@ export class SearchComponent {
     }
   }
 
-  // goRecipeId(id_recipe: number) {
-  //   this.router.navigate(['/recipe', id_recipe]);
-  // }
-
   setSearchString() {
     this.searchString = '';
   }
