@@ -1,25 +1,72 @@
 <!--
 
 El BUSCADOR tendrtía que "borrarse" "resetear" queda raro que siempre tenga la busqueda aunque estes en otra parte de la apicación.
-AQUI FALTA METER TITULO Y BUSCADOR GRANDE PARA HOME 
+FALTA ESTE SPAM NO ME GUSTA 
 
 -->
 
-<div style="margin-top: 150px"></div>
-<!-- File: src/app/pages/home/home.component.html -->
-<h1 class=" display-1 text-center my-3">{{ title }}</h1>
+<section>
+  <div style="margin-top: 150px"></div>
+  <article class="container my-5">
+    <h1 class="display-1 text-center my-3">{{ title }}</h1>
+    <p class="text-center w-75 mx-auto lead mb-5 text-muted">
+      ¡Bienvenida a mi recetario! <br />
+      Aquí encontrarás una variedad de recetas deliciosas y fáciles de preparar.
+      Desde platos principales hasta postres, hay algo para todos los gustos.
+      Explora las categorías y descubre nuevas ideas para tus comidas diarias.
+      <br /><br />
+      ¡Espero que disfrutes cocinando. ¡Buen provecho!
+    </p>
+  </article>
 
-<p class="text-center w-75 mx-auto lead mb-5 text-muted ">
-  ¡Bienvenida a mi recetario! <br> Aquí encontrarás una variedad de recetas
-  deliciosas y fáciles de preparar. Desde platos principales hasta postres, hay
-  algo para todos los gustos. Explora las categorías y descubre nuevas ideas
-  para tus comidas diarias. <br><br> ¡Espero que disfrutes cocinando. ¡Buen provecho!
-</p>
-<h1 class="display-4 text-center my-3">Descubre recetas</h1>
+  <!-- BUSCADOR PRINCIPAL MEJORADO -->
+  <article class="container mb-5">
+    <div class="row justify-content-center">
+      <img
+        alt="junpig"
+        src="./assets/images/junpig.png"
+        class="w-25 rounded mx-auto d-block"
+      />
+      <!-- ESTE SPAM NO ME GUSTA pero si lo quito se baja la img -->
+      <span></span> 
+      
+      <div class="col-md-8 col-lg-6">
+        <div class="position-relative ">
+          <input
+            class="form-control form-control-lg shadow-sm"
+            type="search"
+            placeholder="Introduce ingredientes..."
+            aria-label="Buscar recetas"
+            [(ngModel)]="searchString"
+            (input)="searchRecipeString()"
+            [attr.data-bs-toggle]="
+              recipesFiltered.length > 0 ? 'dropdown' : null
+            "
+          />
+          @if (recipesFiltered.length > 0) {
+          <div class="dropdown-menu w-100 show">
+            @for (recipe of recipesFiltered; track $index) {
+            <a
+              class="dropdown-item"
+              [routerLink]="['/recipe', recipe.id_recipe]"
+              (click)="setSearchString()"
+            >
+              {{ recipe.name_recipe }}
+            </a>
+            }
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </article>
 
-<app-carousel />
-<h1 class="display-4 text-center my-3">Categorías</h1>
-<app-carousel />
-<app-carousel />
-<app-carousel />
-<app-carousel />
+  <article class="container my-5">
+    <h1 class="display-4 text-center my-3">Descubre recetas</h1>
+    <app-carousel />
+  </article>
+
+  <article class="container my-5">
+    <h1 class="display-4 text-center my-3">Categorías</h1>
+  </article>
+</section>

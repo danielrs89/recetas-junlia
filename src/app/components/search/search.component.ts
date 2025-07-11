@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RecipesService } from '../../services/recipes.service';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import Recipe from '../../../models/Recipe';
 import { FormsModule } from '@angular/forms';
 
@@ -14,9 +14,7 @@ export class SearchComponent {
   searchString: string = '';
   recipesFiltered: Recipe[] = [];
 
-  constructor(private recipesService: RecipesService, private router: Router) {}
-
-  ngOnInit(): void {}
+  constructor(private recipesService: RecipesService) {}
 
   searchRecipeString() {
     const string = this.searchString.toLocaleLowerCase();

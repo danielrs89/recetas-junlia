@@ -1,39 +1,32 @@
-<div class="collapse navbar-collapse " id="navbarSupportedContent">
-      
-      <div class="d-flex position-relative" role="search">
-        <input
-          class="form-control me-2 dropdown-toggle"
-          type="search"
-          placeholder="Buscar por receta o ingredientes"
-          aria-label="Search"
-          [(ngModel)]="searchString"
-          (input)="searchRecipeString()"
-          [attr.data-bs-toggle]="recipesFiltered.length > 0 ? 'dropdown' : null"
-        />
-        @if (recipesFiltered.length > 0) {
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="d-flex position-relative" role="search">
+    <input
+      class="form-control me-2 dropdown-toggle"
+      type="search"
+      placeholder="Buscar por receta o ingredientes"
+      aria-label="Search"
+      [(ngModel)]="searchString"
+      (input)="searchRecipeString()"
+      [attr.data-bs-toggle]="recipesFiltered.length > 0 ? 'dropdown' : null"
+    />
+    @if (recipesFiltered.length > 0) {
 
-        <ul
-          class="dropdown-menu show"
-          style="
-            position: absolute;
-            top: 100%;
-            left: 0;
-            z-index: 1000;
-            width: 100%;
-          "
+    <ul
+      class="dropdown-menu show"
+      style="position: absolute; top: 100%; left: 0; z-index: 1000; width: 100%"
+    >
+      @for (recipe of recipesFiltered; track $index) {
+
+      <li>
+        <a
+          class="dropdown-item"
+          [routerLink]="['/recipe', recipe.id_recipe]"
+          (click)="setSearchString()"
+          >{{ recipe.name_recipe }}</a
         >
-          @for (recipe of recipesFiltered; track $index) {
-
-          <li>
-            <a
-              class="dropdown-item"
-              [routerLink]="['/recipe', recipe.id_recipe]"
-              (click)="setSearchString()"
-              >{{ recipe.name_recipe }}</a
-            >
-          </li>
-          }
-        </ul>
-        }
-      </div>
-    </div>
+      </li>
+      }
+    </ul>
+    }
+  </div>
+</div>
