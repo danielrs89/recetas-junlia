@@ -1,12 +1,14 @@
-<!--
-
-El BUSCADOR tendrtía que "borrarse" "resetear" queda raro que siempre tenga la busqueda aunque estes en otra parte de la apicación.
-FALTA ESTE SPAM NO ME GUSTA 
-
+<!-- 
+  SECCIÓN PRINCIPAL DEL RECETARIO 
+  - Contiene título, descripción, buscador, carrusel y categorías.
+  - El buscador filtra recetas en tiempo real y muestra sugerencias.
 -->
 
 <section>
+  <!-- Espaciado superior para separar del navbar -->
   <div style="margin-top: 150px"></div>
+
+  <!-- Título y descripción de bienvenida -->
   <article class="container my-5">
     <h1 class="display-1 text-center my-3">{{ title }}</h1>
     <p class="text-center w-75 mx-auto lead mb-5 text-muted">
@@ -19,19 +21,27 @@ FALTA ESTE SPAM NO ME GUSTA
     </p>
   </article>
 
-  <!-- BUSCADOR PRINCIPAL MEJORADO -->
+  <!-- 
+    BUSCADOR PRINCIPAL 
+    - Usa ngModel para two-way binding con searchString.
+    - Filtra recetas en tiempo real (input) y muestra dropdown con resultados.
+    - La imagen tiene draggable="false" para evitar arrastre.
+  -->
   <article class="container mb-5">
     <div class="row justify-content-center">
-      <img
-        alt="junpig"
-        src="./assets/images/junpig.png"
-        class="w-25 rounded mx-auto d-block"
-      />
-      <!-- ESTE SPAM NO ME GUSTA pero si lo quito se baja la img -->
-      <span></span> 
-      
+      <!-- Imagen decorativa (no arrastrable) -->
+      <div class="container">
+        <img
+          alt="junpig"
+          src="./assets/images/junpig.png"
+          class="w-25 rounded mx-auto d-block"
+          draggable="false"
+        />
+      </div>
+
+      <!-- Input de búsqueda con dropdown de sugerencias -->
       <div class="col-md-8 col-lg-6">
-        <div class="position-relative ">
+        <div class="position-relative">
           <input
             class="form-control form-control-lg shadow-sm"
             type="search"
@@ -43,6 +53,8 @@ FALTA ESTE SPAM NO ME GUSTA
               recipesFiltered.length > 0 ? 'dropdown' : null
             "
           />
+
+          <!-- Dropdown con resultados de búsqueda -->
           @if (recipesFiltered.length > 0) {
           <div class="dropdown-menu w-100 show">
             @for (recipe of recipesFiltered; track $index) {
@@ -61,11 +73,13 @@ FALTA ESTE SPAM NO ME GUSTA
     </div>
   </article>
 
+  <!-- Carrusel de recetas destacadas -->
   <article class="container my-5">
     <h1 class="display-4 text-center my-3">Descubre recetas</h1>
     <app-carousel />
   </article>
 
+  <!-- Sección de categorías (pendiente de contenido) -->
   <article class="container my-5">
     <h1 class="display-4 text-center my-3">Categorías</h1>
   </article>
