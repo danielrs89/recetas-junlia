@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [CarouselComponent,FormsModule, RouterLink],
+  imports: [CarouselComponent, FormsModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -16,6 +16,8 @@ export class HomeComponent {
   searchString: string = '';
   recipesFiltered: Recipe[] = [];
   constructor(private recipesService: RecipesService) {}
+
+  // BUSCADOR
   searchRecipeString() {
     const string = this.searchString.toLocaleLowerCase();
     if (!string.trim()) {

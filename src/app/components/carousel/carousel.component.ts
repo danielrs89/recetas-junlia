@@ -14,6 +14,7 @@ export class CarouselComponent implements OnInit {
     name_recipe: '',
     name_bd: '',
     id_recipe: 0,
+    like_recipe:0,
   };
   constructor(public recipesService: RecipesService) {}
 
