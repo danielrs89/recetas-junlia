@@ -1,80 +1,79 @@
 <!-- 
-  HEADER PRINCIPAL CON BARRA DE NAVEGACIÓN
+  BARRA DE NAVEGACIÓN
   - Barra fija en la parte superior (fixed-top)
   - Incluye logo, menú desplegable y componente de búsqueda
   - Diseño responsive con toggler para móviles
 -->
-<header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow">
-    <div class="container-fluid">
-      <!-- Logo y enlace de inicio -->
-      <a class="navbar-brand" [routerLink]="['/']">
-        <img
-          src="./assets/images/junpig.png"
-          alt="logo"
-          class="img-fluid"
-          style="max-width: 64px"
-          draggable="false"
-        />
-        <b><i>Las recetas de Junlia</i></b>
-      </a>
 
-      <!-- Botón para menú hamburguesa (en móviles) -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow">
+  <div class="container-fluid">
+    <!-- Logo y enlace de inicio -->
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img
+        src="./assets/images/junpig.png"
+        alt="logo"
+        class="img-fluid"
+        style="max-width: 64px"
+        draggable="false"
+      />
+      <b><i>Las recetas de Junlia</i></b>
+    </a>
 
-      <!-- Contenido colapsable del navbar -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- Enlace a Recetas -->
-          <li class="nav-item">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              [routerLink]="['/recipes']"
-            >
-              Recetas
-            </a>
-          </li>
+    <!-- Botón para menú hamburguesa (en móviles) -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-          <!-- Menú desplegable de Categorías -->
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Categorías
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" [routerLink]="['/']">Carnes</a></li>
-              <li>
-                <a class="dropdown-item" [routerLink]="['/']">Pescados</a>
-              </li>
-              <li>
-                <a class="dropdown-item" [routerLink]="['/']">Verduras</a>
-              </li>
-              <li><a class="dropdown-item" [routerLink]="['/']">Postres</a></li>
-            </ul>
-          </li>
-        </ul>
+    <!-- Contenido colapsable del navbar -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Enlace a Recetas -->
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            [routerLink]="['/recipes']"
+          >
+            Recetas
+          </a>
+        </li>
 
-        <!-- Componente de búsqueda (sección derecha del navbar) -->
-        <app-search />
-      </div>
+        <!-- Menú desplegable de Categorías -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Categorías
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['/']">Carnes</a></li>
+            <li>
+              <a class="dropdown-item" [routerLink]="['/']">Pescados</a>
+            </li>
+            <li>
+              <a class="dropdown-item" [routerLink]="['/']">Verduras</a>
+            </li>
+            <li><a class="dropdown-item" [routerLink]="['/']">Postres</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Componente de búsqueda (sección derecha del navbar) -->
+      <app-search />
     </div>
-  </nav>
-</header>
+  </div>
+</nav>
 
 <!-- Espaciado superior para separar del navbar -->
 <div style="margin-top: 150px"></div>

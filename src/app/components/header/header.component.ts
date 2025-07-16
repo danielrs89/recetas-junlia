@@ -1,6 +1,6 @@
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from '../search/search.component';
-import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({

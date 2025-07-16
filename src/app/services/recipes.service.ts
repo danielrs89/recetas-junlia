@@ -34,6 +34,19 @@ export class RecipesService {
       },
     ];
   }
+
+  setName(id: number, newText: string) {
+    const setRecipe = this.recipes.find((recipe) => recipe.id_recipe === id);
+    if (!setRecipe) return;
+
+    setRecipe.name_recipe = newText;
+    
+  }
+
+  setLike(id: number) {
+    const setRecipe = this.recipes.find((recipe) => recipe.id_recipe === id);
+    if (!setRecipe) return;
+
+    setRecipe.like_recipe = setRecipe.like_recipe+1;
+  }
 }
-// https://www.youtube.com/watch?v=mozXKdC2UdQ&list=PLzA2VyZwsq_9cD3JIxBymaIVyef07PJ-y&index=32
-// min 19.13
