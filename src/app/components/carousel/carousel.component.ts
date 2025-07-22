@@ -11,10 +11,16 @@ import { RouterLink } from '@angular/router';
 })
 export class CarouselComponent implements OnInit {
   recipe: Recipe = {
+    id_recipe: 0,
     name_recipe: '',
     name_bd: '',
-    id_recipe: 0,
-    like_recipe:0,
+    like_recipe: 0,
+    tiempo: '',
+    ingredientes: {
+      raciones: 0,
+      ingrediente: [],
+    },
+    pasos: [],
   };
   constructor(public recipesService: RecipesService) {}
 

@@ -2,5 +2,11 @@ export default interface Recipe {
   id_recipe: number;
   name_recipe: string;
   name_bd: string;
-  like_recipe: number;
+  like_recipe: number; 
+  tiempo: string;
+  ingredientes: {
+    raciones: number;
+    ingrediente: string[];
+  };
+  pasos: string[];
 }

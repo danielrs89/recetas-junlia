@@ -1,21 +1,60 @@
-<div class="container d-flex justify-content-center my-3">
-  <button
-    type="button"
-    class="btn btn-primary position-relative"
-    (click)="setLike(recipe()?.id_recipe)"
-  >
-    <input
-      type="text"
-      [value]="recipe()?.name_recipe"
-      (input)="setName(recipe()?.id_recipe, $event)"
-    />
-    <!-- $event = Objeto del evento -->
+<!-- <button
+  type="button"
+  class="btn btn-primary position-relative"
+  (click)="setLike(recipe()?.id_recipe)"
+>
+  <input
+    type="text"
+    [value]="recipe()?.name_recipe"
+    (input)="setName(recipe()?.id_recipe, $event)"
+  />
+  $event = Objeto del evento
 
-    <span
-      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-    >
-      {{ recipe()?.like_recipe }} ❤️
-      <span class="visually-hidden">unread messages</span>
-    </span>
-  </button>
+  <span
+    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+  >
+    {{ recipe()?.like_recipe }} ❤️
+    <span class="visually-hidden">unread messages</span>
+  </span>
+</button> -->
+
+<div class="container d-flex justify-content-center my-3">
+  <div class="card" style="width: 18rem">
+    <img
+      [alt]="recipe()?.name_recipe"
+      [src]="'./assets/images/' + recipe()?.name_bd + '.jpg'"
+      class="card-img-top"
+    />
+
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ recipe()?.name_recipe }}
+        <span
+          (click)="setLike(recipe()?.id_recipe)"
+          type="button"
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        >
+          {{ recipe()?.like_recipe }} ❤️
+        </span>
+      </h5>
+      <p class="card-text">
+        {{ recipe()?.tiempo }}
+        <br />
+        <span class="fw-bold">Raciones: </span>
+        {{ recipe()?.ingredientes?.raciones }}
+      </p>
+
+      <ol class="list-group list-group-numbered">
+        @for (paso of recipe()?.pasos; track $index) {
+
+        <li
+          class="list-group-item d-flex justify-content-between align-items-start"
+        >
+          {{ paso }}
+          <div class="ms-2 me-auto"></div>
+        </li>
+        }
+      </ol>
+    </div>
+  </div>
 </div>

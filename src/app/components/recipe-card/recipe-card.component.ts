@@ -13,12 +13,12 @@ export class RecipeCardComponent {
 
   constructor(public recipeService: RecipesService) {}
 
-  setName(id: number | undefined, event: Event) {
-    if (!id) return;
-    const inputHtml = event.target as HTMLInputElement;
+  // setName(id: number | undefined, event: Event) {
+  //   if (!id) return;
+  //   const inputHtml = event.target as HTMLInputElement;
 
-    this.recipeService.setName(id, inputHtml.value);
-  }
+  //   this.recipeService.setName(id, inputHtml.value);
+  // }
   
   setLike(id: number | undefined) {
     if (!id) return;
